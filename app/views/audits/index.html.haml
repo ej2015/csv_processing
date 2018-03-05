@@ -1,0 +1,9 @@
+%h1
+  = t ".title" 
+
+= render "audits/index/filter"
+
+#filterrific_results
+  = render "audits/index/index_table"
+
+= link_to 'New Audit', new_audit_path, class: "btn btn-primary"

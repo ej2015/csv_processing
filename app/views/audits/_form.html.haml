@@ -1,0 +1,10 @@
+= simple_form_for(@audit, html: { class: 'form-horizontal',   multipart: true }) do |f|
+  - if @audit.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@audit.errors.count, "error")} prohibited this audit from being saved:"
+      %ul
+        - @audit.errors.full_messages.each do |message|
+          %li= message
+  = f.input :file, label: false, as: :file, required: true
+  .actions
+    = f.submit 'Save'
