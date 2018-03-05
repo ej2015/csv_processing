@@ -1,0 +1,21 @@
+%h1 Listing log_files
+
+%table
+  %thead
+    %tr
+      %th Name 
+      %th
+      %th
+      %th
+
+  %tbody
+    - @log_files.each do |log_file|
+      %tr
+        %td= log_file.directory.file.filename
+        %td= link_to 'Show', log_file
+        %td= link_to 'Edit', edit_log_file_path(log_file)
+        %td= link_to 'Destroy', log_file, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Log file', new_log_file_path

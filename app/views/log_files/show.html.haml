@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Directory:
+  = @log_file.directory
+
+= link_to 'Edit', edit_log_file_path(@log_file)
+\|
+= link_to 'Back', log_files_path
